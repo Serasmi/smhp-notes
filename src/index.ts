@@ -1,0 +1,15 @@
+import config from 'config';
+import ip from 'ip';
+
+import { application as app } from './app';
+
+const port: string = config.get('app.port');
+
+const address = ip.address();
+
+app()
+  .then(({ server }) => server.listen(port, () => console.log(`> Listening at http://${address}:${port}\n`)))
+  .catch(e => {
+    console.error(e);
+    console.error("Can't start server");
+  });
