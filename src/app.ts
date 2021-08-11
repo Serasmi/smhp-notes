@@ -1,6 +1,6 @@
 import express from 'express';
 import { Server } from 'http';
-import { router } from 'src/routes';
+import { router } from 'src/routers';
 import bodyParser from 'body-parser';
 
 export const application = async (): Promise<{ server: Server }> => {
