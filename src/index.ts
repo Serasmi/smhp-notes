@@ -1,9 +1,11 @@
-import config from 'config';
+import dotenv from 'dotenv';
 import ip from 'ip';
 
 import { application as app } from './app';
 
-const port: string = config.get('app.port');
+dotenv.config();
+
+const port = process.env.PORT ?? 3000;
 
 const address = ip.address();
 
