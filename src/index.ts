@@ -1,9 +1,8 @@
-import dotenv from 'dotenv';
+// ./env should be a very first import
+import './env';
 import ip from 'ip';
 
 import { application as app } from './app';
-
-dotenv.config();
 
 const port = process.env.PORT ?? 3000;
 
